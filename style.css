@@ -1147,6 +1147,11 @@ button:hover span i {
     width: 15rem;
   }
 
+  .testi7{
+    top: 50%;
+    left: -100%;
+  }
+  
   .text-video {
     top: 2rem;
     left: 1rem;
