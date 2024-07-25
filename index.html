@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mad Over Donuts - ReImagine</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="loading" id="loading">
+      <img id="loadingImg" src="./Assets/loader GIF.gif" alt="" />
+      <div class="loader">
+        <img src="./Assets/loader.png" alt="" />
+      </div>
+    </div>
+
+    <div class="heroSection">
+      <nav>
+        <div class="socials">
+          <i class="fa-solid fa-users"></i>
+          <div class="dropdown-content">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </div>
+        <img class="logo" src="./Assets/logo.png" alt="" />
+        <div class="menu" id="menu">
+          <div class="upperBar"></div>
+          <div class="lowerBar"></div>
+        </div>
+        <div class="fullscreen-menu" id="fullscreenMenu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Treats</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="hero">
+        <div class="info">
+          <div class="top">
+            <p class="mini">Bite into happiness at</p>
+
+            <div class="big-madtext">
+              <div class="madover">
+                <h1>
+                  Mad
+                  <span class="donut1"
+                    ><img src="./Assets/Donut1.png" alt="" /></span
+                  >ver
+                </h1>
+              </div>
+              <div class="donutmad">
+                <h1>
+                  D<span class="donut2"
+                    ><img src="./Assets/Donut2.png" alt="" /></span
+                  >nuts
+                </h1>
+              </div>
+            </div>
+
+            <div class="model model-flex1">
+              <img src="./Assets/heroBG.png" alt="" />
+            </div>
+            <p class="heroText">
+              “Where every bite s a memory glazed with joy and sprinkled with
+              love.”
+            </p>
+            <button>
+              <span><i class="fa-solid fa-arrow-right"></i></span>Order Now
+            </button>
+          </div>
+          <div class="bottom">
+            <p>Which flavour you are looking for?</p>
+            <div class="tag">Chocolate Decadence</div>
+            <div class="tag">Choco Bomb</div>
+            <div class="tag">Dark Knight</div>
+            <br />
+            <div class="tag">Brownie Crumble</div>
+            <div class="tag">Double Trouble</div>
+            <a class="more" href="#slider">
+              <i class="fa-solid fa-arrow-right"></i>Explore More
+            </a>
+          </div>
+        </div>
+        <div class="model model-flex2">
+          <img src="./Assets/heroBG.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="scroller">
+      <div class="layer1">
+        <p>sugar<span>rush</span>omg</p>
+        <span><img src="./Assets/Donut1.png" alt="" /></span>
+        <p><span>extra</span>moreplease</p>
+        <p>sugar<span>rush</span>omg</p>
+        <span><img src="./Assets/Donut1.png" alt="" /></span>
+        <p><span>extra</span>moreplease</p>
+      </div>
+      <div class="layer2">
+        <p>chocolate<span>happy</span></p>
+        <span><img src="./Assets/Donut2.png" alt="" /></span>
+        <p><span>joy</span>sprinklesyes</p>
+        <p>chocolate<span>happy</span></p>
+        <span><img src="./Assets/Donut2.png" alt="" /></span>
+        <p><span>joy</span>sprinklesyes</p>
+      </div>
+    </div>
+
+    <div class="content-donut">
+      <div class="main-donut">
+        <div class="donut-text1">
+          <div class="do-text1" id="anim1">Spotlight</div>
+          <div class="do-text2" id="anim2">Explore Our Donut</div>
+        </div>
+        <div class="donut-box">
+          <svg
+            width="60rem"
+            height="50rem"
+            viewBox="0 0 617 578"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.30278 179.655C-18.2539 108.507 40.3155 51.0952 109.085 16.6521C183.448 -20.5922 243.438 12.4738 322.357 39.6525C437.758 79.395 585.073 114.632 565.208 231.156C561.645 252.056 552.02 261.917 547.565 282.657C529.241 367.969 639.121 413.271 612.948 496.661C570.128 633.089 239.332 556.662 239.332 556.662C239.332 556.662 -5.32226 499.916 5.30278 391.159C11.1656 331.147 107.268 321.569 94.0366 262.657C83.8212 217.174 19.9815 223.989 5.30278 179.655Z"
+              fill="#FFB727"
+            />
+          </svg>
+
+          <div class="donut-big-text">
+            <span>D</span>O<span>N</span>U<span>T</span>
+          </div>
+
+          <div class="donut-container" id="scrollContainer">
+            <img src="./Assets/image1.png" class="image img1" alt="Image 1" />
+            <img src="./Assets/image2.png" class="image img2" alt="Image 2" />
+            <img src="./Assets/image3.png" class="image img3" alt="Image 3" />
+          </div>
+          <div class="donut-floating-text">
+            <div class="dft1">
+              <svg
+                width="230"
+                height="61"
+                viewBox="0 0 230 61"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.666667 55.5C0.666667 58.4455 3.05448 60.8333 6 60.8333C8.94552 60.8333 11.3333 58.4455 11.3333 55.5C11.3333 52.5545 8.94552 50.1667 6 50.1667C3.05448 50.1667 0.666667 52.5545 0.666667 55.5ZM48.5 1V0H48.0117L47.7114 0.385058L48.5 1ZM6.78857 56.1149L49.2886 1.61494L47.7114 0.385058L5.21143 54.8851L6.78857 56.1149ZM48.5 2H230V0H48.5V2Z"
+                  fill="#6A2D25"
+                />
+              </svg>
+              <div class="dft1-text">
+                <p>Sprinkles</p>
+              </div>
+            </div>
+            <div class="dft2">
+              <div class="dft1-text dft2-text">
+                <p>Chocolate</p>
+              </div>
+              <svg
+                width="230"
+                height="61"
+                viewBox="0 0 230 61"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.666667 55.5C0.666667 58.4455 3.05448 60.8333 6 60.8333C8.94552 60.8333 11.3333 58.4455 11.3333 55.5C11.3333 52.5545 8.94552 50.1667 6 50.1667C3.05448 50.1667 0.666667 52.5545 0.666667 55.5ZM48.5 1V0H48.0117L47.7114 0.385058L48.5 1ZM6.78857 56.1149L49.2886 1.61494L47.7114 0.385058L5.21143 54.8851L6.78857 56.1149ZM48.5 2H230V0H48.5V2Z"
+                  fill="#6A2D25"
+                />
+              </svg>
+            </div>
+            <div class="dft3">
+              <svg
+                width="230"
+                height="62"
+                viewBox="0 0 230 62"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.666667 6C0.666667 3.05448 3.05448 0.666668 6 0.666668C8.94552 0.666668 11.3333 3.05448 11.3333 6C11.3333 8.94552 8.94552 11.3333 6 11.3333C3.05448 11.3333 0.666667 8.94552 0.666667 6ZM48.5 60.5V61.5H48.0117L47.7114 61.1149L48.5 60.5ZM6.78857 5.38506L49.2886 59.8851L47.7114 61.1149L5.21143 6.61494L6.78857 5.38506ZM48.5 59.5H230V61.5H48.5V59.5Z"
+                  fill="#6A2D25"
+                />
+              </svg>
+
+              <div class="dft1-text dft3-text">
+                <p>Dough</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="all-sections">
+      <div class="first">
+        <p class="do-text1" id="anim3">Treats</p>
+        <h2 class="do-text2" id="anim4">Handcraft Treats for All</h2>
+      </div>
+
+      <div
+        class="section-1 section divAnim1"
+        onclick="toggleDetails('section-1')"
+      >
+        <div class="Sec-1">
+          <i class="fa-regular fa-face-smile-beam"></i>
+          <br />
+          <p>The Joy Of Giving</p>
+          <br />
+          <div class="details">
+            <p>
+              Our array of delicious treats, made with love and perfection in
+              every bite, turns every occasion into a sweet celebration. Give
+              the gift of happiness with MOD today!
+            </p>
+            <button>Gift Now</button>
+          </div>
+        </div>
+        <div class="image-1">
+          <img src="./Assets/giving.gif" alt="" />
+        </div>
+      </div>
+
+      <div
+        class="section-2 section divAnim2"
+        onclick="toggleDetails('section-2')"
+      >
+        <div class="Sec-2">
+          <i class="fa-regular fa-face-smile-beam"></i>
+          <br />
+          <p>Design Your Dream Donut</p>
+          <br />
+          <div class="details">
+            <p>
+              Can't find a donut that matches your mood? Create one at our
+              Topping Bar! Choose from a variety of glazes, toppings, and
+              fillings to create a donut that's truly unique.
+            </p>
+            <button>Visit a Store</button>
+          </div>
+        </div>
+        <div class="image-2">
+          <img src="./Assets/custom.gif" alt="" />
+        </div>
+      </div>
+
+      <div
+        class="section-3 section divAnim3"
+        onclick="toggleDetails('section-3')"
+      >
+        <div class="Sec-3">
+          <i class="fa-regular fa-face-smile-beam"></i>
+          <br />
+          <p>Freshly Topped Minutes Ago</p>
+          <br />
+          <div class="details">
+            <p>
+              We take pride in crafting donuts so fresh that they leave a
+              lasting memory on your tastebuds and keep you wanting for more.
+              From our classic glaze or chocolate donuts to red velvet or salted
+              caramel, our donuts are a celebration of all things delicious.
+            </p>
+            <button>Try Now</button>
+          </div>
+        </div>
+        <div class="image-3">
+          <img src="./Assets/topped.gif" alt="" />
+        </div>
+      </div>
+
+      <div
+        class="section-4 section divAnim4"
+        onclick="toggleDetails('section-4')"
+      >
+        <div class="Sec-4">
+          <i class="fa-regular fa-face-smile-beam"></i>
+          <br />
+          <p>Delicious Treat For Every Occassion</p>
+          <br />
+          <div class="details">
+            <p>
+              From weddings to office bashes to Netflix binges, we're here to
+              make every occasion sweeter. Satisfy cravings and bring joy to the
+              party with MOD.
+            </p>
+            <button>Contact Us</button>
+          </div>
+        </div>
+        <div class="image-4">
+          <img src="./Assets/every.gif" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="main-slider">
+      <div class="slider" id="slider">
+        <div class="slider-line slider-line-1">
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image2.png">Choco Bomb</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image1.png">Hazel Dazzle</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image3.png">Divine Crush</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image4.png"
+              >Black & White Bavarion</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image5.png">Cookie Overload</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image6.png">Perk Me Up</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image7.png">Rainbow Surprise</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image8.png">Dark Knight</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image9.png"
+              >Chocolate Decadence</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image10.png">Double Trouble</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image11.png">Cool Blue Ice</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image2.png">Choco Bomb</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image1.png">Hazel Dazzle</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image3.png">Divine Crush</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image4.png"
+              >Black & White Bavarion</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image5.png">Cookie Overload</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image6.png">Perk Me Up</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image7.png">Rainbow Surprise</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image8.png">Dark Knight</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image9.png"
+              >Chocolate Decadence</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image10.png">Double Trouble</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image11.png">Cool Blue Ice</span>
+            &#8226; &nbsp;
+          </div>
+        </div>
+        <div class="slider-line slider-line-2">
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image12.png"
+              >My Original Donut</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image13.png">Original Sin</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image14.png">Cinnaster</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image15.png">Coco Loco</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image16.png">Midnight Beauty</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image12.png"
+              >My Original Donut</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image13.png">Original Sin</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image14.png">Cinnaster</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image15.png">Coco Loco</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image16.png">Midnight Beauty</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image12.png"
+              >My Original Donut</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image13.png">Original Sin</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image14.png">Cinnaster</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image15.png">Coco Loco</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image16.png">Midnight Beauty</span>
+            &#8226; &nbsp;
+          </div>
+        </div>
+        <div class="slider-line slider-line-3">
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image17.png">Mocha Truffle</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image18.png"
+              >Chocolate Therapy</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image19.png">Brownie Crumble</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image20.png">Swirl It Up</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image21.png">Krunch Kraze</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image22.png">Salted Caramel</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image23.png">Red Velvet</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image17.png">Mocha Truffle</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image18.png"
+              >Chocolate Therapy</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image19.png">Brownie Crumble</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image20.png">Swirl It Up</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image21.png">Krunch Kraze</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image22.png">Salted Caramel</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image23.png">Red Velvet</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image17.png">Mocha Truffle</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image18.png"
+              >Chocolate Therapy</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image19.png">Brownie Crumble</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image20.png">Swirl It Up</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image21.png">Krunch Kraze</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image22.png">Salted Caramel</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image23.png">Red Velvet</span>
+            &#8226; &nbsp;
+          </div>
+        </div>
+        <div class="slider-line slider-line-4">
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image24.png"
+              >Hazelnut Bliss with Nutella</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image25.png">Dark Temptation</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image26.png">Coffee Delight</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image27.png">Caramel Crumble</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image24.png"
+              >Hazelnut Bliss with Nutella</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image25.png">Dark Temptation</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image26.png">Coffee Delight</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image27.png">Caramel Crumble</span>
+            &#8226; &nbsp;
+          </div>
+          <div class="slider-text">
+            <span data-img="./Assets/donuts/image24.png"
+              >Hazelnut Bliss with Nutella</span
+            >
+            &#8226;
+            <span data-img="./Assets/donuts/image25.png">Dark Temptation</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image26.png">Coffee Delight</span>
+            &#8226;
+            <span data-img="./Assets/donuts/image27.png">Caramel Crumble</span>
+            &#8226; &nbsp;
+          </div>
+        </div>
+
+        <div id="floating-text-1" class="floating-text">Speciality Donuts</div>
+        <div id="floating-text-2" class="floating-text">Classic Donuts</div>
+        <div id="floating-text-3" class="floating-text">Signature Donuts</div>
+        <div id="floating-text-4" class="floating-text">Eclairs</div>
+      </div>
+      <div class="dup-image-container"></div>
+    </div>
+
+    <div class="video-container-main">
+      <div class="video-ctn-Text">
+        <div class="vi-c-text1 do-text1">Our Story</div>
+        <div class="vi-c-text2 do-text2">Intrigued, about our journey</div>
+      </div>
+      <div class="video-container">
+        <div class="text-video">
+          How we craft your favourite donut to perfection every time?
+        </div>
+        <video
+          id="myVideo"
+          src="./Assets/video.mp4"
+          type="video/mp4"
+          muted
+        ></video>
+        <button id="playPauseButton">
+          <img id="playIcon" src="./Assets/play-button.png" alt="Play" />
+          <img
+            id="pauseIcon"
+            src="./Assets/pause.png"
+            alt="Pause"
+            style="display: none"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <div class="reviewTitle">
+        <div class="do-text1 anime5">Reviews</div>
+        <div class="do-text2 anime6">From Delighted Donut Lovers</div>
+      </div>
+      <div class="review">
+        <div class="review1 rel">
+          <img
+            class="reviewImg1"
+            src="./Assets/reviewDonut.png"
+            alt=""
+            onclick="showTestimonial('testi1')"
+          />
+          <div class="testimonial testi1">
+            <div class="profile">
+              <img src="./Assets/profile1.jpg" alt="" />
+              <div class="user">
+                <p>Vedant Jeughale</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                Mad Over Donuts offers a delightful array of classic flavors
+                that never disappoint. From glazed to chocolate-filled, each
+                bite is a pure indulgence.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="review2 rel">
+          <img
+            src="./Assets/reviewDonut3.png"
+            alt=""
+            onclick="showTestimonial('testi2')"
+          />
+          <div class="testimonial testi2">
+            <div class="profile">
+              <img src="./Assets/profile2.jpg" alt="" />
+              <div class="user">
+                <p>Rishi T.</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                The donuts at Mad Over Donuts are always fresh and bursting with
+                flavor. You can taste the quality in every bite.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="review3 rel">
+          <img
+            src="./Assets/Donut1.png"
+            alt=""
+            onclick="showTestimonial('testi3')"
+          />
+          <div class="testimonial testi3">
+            <div class="profile">
+              <img src="./Assets/profile3.jpg" alt="" />
+              <div class="user">
+                <p>Sarthak Mule</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                They're not afraid to get creative! Their unique donut creations
+                like Nutty Choco Crunch and Caramel Custard are a must-try for
+                adventurous taste buds.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="review4 rel">
+          <img
+            src="./Assets/reviewDonut4.png"
+            alt=""
+            onclick="showTestimonial('testi4')"
+          />
+          <div class="testimonial testi4">
+            <div class="profile">
+              <img src="./Assets/profile4.jpg" alt="" />
+              <div class="user">
+                <p>Ahmad Ansari</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                Whether you visit their store in the morning or late afternoon,
+                you can count on Mad Over Donuts for consistently delicious
+                treats.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="review5 rel">
+          <img
+            src="./Assets/reviewDonut5.png"
+            alt=""
+            onclick="showTestimonial('testi5')"
+          />
+          <div class="testimonial testi5">
+            <div class="profile">
+              <img src="./Assets/profile5.jpg" alt="" />
+              <div class="user">
+                <p>Prem F.</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                Mad Over Donuts has become our family's go-to spot for weekend
+                treats. Their donuts are a hit with both kids and adults alike.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="review6 rel">
+          <img
+            src="./Assets/reviewDonut6.png"
+            alt=""
+            onclick="showTestimonial('testi6')"
+          />
+          <div class="testimonial testi6">
+            <div class="profile">
+              <img src="./Assets/profile6.jpg" alt="" />
+              <div class="user">
+                <p>Anuj Daphale</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                The staff at Mad Over Donuts are always friendly and eager to
+                help you pick the perfect treat. It adds to the overall
+                enjoyable experience.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="review7 rel">
+          <img
+            src="./Assets/Donut2.png"
+            alt=""
+            onclick="showTestimonial('testi7')"
+          />
+          <div class="testimonial testi7">
+            <div class="profile">
+              <img src="./Assets/profile7.jpg" alt="" />
+              <div class="user">
+                <p>Prathmesh S</p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="comment">
+              <p>
+                While slightly pricier than your average donut shop, the quality
+                and taste justify the cost. It's a treat worth splurging on
+                every now and then.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Footer">
+      <div class="footer">
+        <div class="first-1">
+          <img src="./Assets/footer logo.png" alt="" />
+          <h4 class="foot-title">Spreading Smiles Through Donuts</h4>
+          <br />
+          <p>
+            Welcome to MOD, where every treat is a joyful celebration of
+            life.We're not just a brand; we're an experience and a sprinkle of
+            happiness in your daily routine.
+          </p>
+        </div>
+
+        <div class="Second-2">
+          <h4 class="foot-title">Useful Links</h4>
+          <br />
+          <p>Terms & Conditions</p>
+          <p>privacy Policy</p>
+          <p>Store Location</p>
+          <p>Contact Us</p>
+          <p>FAQ</p>
+        </div>
+
+        <div class="Third-3">
+          <h4 class="foot-title">Get Connected</h4>
+          <br />
+          <img src="./Assets/devicon_facebook.png" alt="" />
+          <img src="./Assets/skill-icons_linkedin.png" alt="" />
+          <img src="./Assets/skill-icons_twitter.png" alt="" />
+          <img src="./Assets/skill-icons_instagram.png" alt="" />
+        </div>
+      </div>
+      <div class="bg">
+        <img src="./Assets/footer.png" alt="" />
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <!-- <script src="donut-script.js"></script> -->
+    <script src="script.js"></script>
+  </body>
+</html>
