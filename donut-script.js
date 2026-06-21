@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let hasScrolledOnce = false;
     let touchStartY = 0;
 
-
-
-
     const getExpandMarginTopValue = () => {
         if (window.innerWidth <= 480) {
             return '30px'; 

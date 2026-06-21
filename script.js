@@ -1,3 +1,7 @@
+import * as THREE from "three";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/loaders/GLTFLoader.js";
+
 setTimeout(() => {
   document.getElementById("loadingImg").style.display = "none";
   document.getElementById("loadingImg").style.zIndex = "-10";
@@ -198,11 +202,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const fullscreenMenu = document.getElementById("fullscreenMenu");
 
   menu.addEventListener("click", function () {
-    fullscreenMenu.style.display = "block";
+    fullscreenMenu.classList.add("open");
   });
 
   fullscreenMenu.addEventListener("click", function () {
-    fullscreenMenu.style.display = "none";
+    fullscreenMenu.classList.remove("open");
+  });
+
+  const treatSections = document.querySelectorAll("#treats .section");
+  treatSections.forEach((section) => {
+    const imageContainer = section.querySelector(".image-1, .image-2, .image-3, .image-4");
+    const img = imageContainer?.querySelector("img");
+    if (!imageContainer || !img) return;
+
+    imageContainer.style.position = "relative";
+    imageContainer.style.overflow = "visible";
+    imageContainer.style.transformOrigin = "center center";
+
+    img.style.position = "absolute";
+    img.style.top = "0";
+    img.style.left = "0";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    img.style.objectFit = "cover";
+    img.style.pointerEvents = "none";
+
+    section.addEventListener("pointermove", (event) => {
+      if (event.pointerType === "touch") return;
+      const containerRect = imageContainer.getBoundingClientRect();
+      const imgRect = img.getBoundingClientRect();
+      const targetX = event.clientX - containerRect.left - imgRect.width / 2;
+      const targetY = event.clientY - containerRect.top - imgRect.height / 2;
+
+      gsap.to(img, {
+        x: targetX,
+        y: targetY,
+        duration: 0,
+        ease: "none",
+      });
+    });
+
+    section.addEventListener("pointerleave", () => {
+      gsap.to(img, {
+        x: 0,
+        y: 0,
+        duration: 0.15,
+        ease: "power1.out",
+      });
+    });
   });
 });
 
@@ -217,6 +264,8 @@ function toggleDetails(sectionId) {
     }
   });
 }
+
+window.toggleDetails = toggleDetails;
 
 const video = document.getElementById("myVideo");
 const playPauseButton = document.getElementById("playPauseButton");
@@ -396,7 +445,7 @@ gsap.from(".more", {
   x: -200,
 });
 
-gsap.from(".model img", {
+gsap.from(".model #donutCanvas", {
   delay: 6.7,
   scale: 0,
   opacity: 0,
@@ -545,23 +594,31 @@ gsap.from(".text-video", {
   },
 });
 
-gsap.from(".anim5, .anim6", {
-  delay: 1,
+gsap.from(".anime5, .anime6", {
+  delay: 0.2,
   opacity: 0,
-  scale: 0,
+  y: 30,
+  duration: 1,
+  ease: "power3.out",
+  stagger: 0.08,
   scrollTrigger: {
-    trigger: ".anim5",
+    trigger: ".reviewTitle",
+    start: "top 90%",
   },
 });
 
 gsap.from(".review img", {
-  delay: 1,
+  delay: 0.3,
   opacity: 0,
-  scale: 0,
+  y: 40,
+  scale: 0.92,
+  duration: 1.1,
+  ease: "power3.out",
+  stagger: 0.12,
   scrollTrigger: {
-    trigger: ".review img",
+    trigger: ".review",
+    start: "top 80%",
   },
-  stagger: 0.2,
 });
 
 gsap.from(".Footer", {
@@ -574,18 +631,174 @@ gsap.from(".Footer", {
 });
 
 function showTestimonial(testimonialId) {
-  // Hide all testimonials
   var testimonials = document.querySelectorAll(".testimonial");
   testimonials.forEach(function (testimonial) {
-    testimonial.style.display = "none";
+    testimonial.classList.remove("visible");
   });
 
-  // Show the clicked testimonial
   var testimonialToShow = document.querySelector("." + testimonialId);
   if (testimonialToShow) {
-    testimonialToShow.style.display = "block";
+    testimonialToShow.classList.add("visible");
   }
 }
+
+window.showTestimonial = showTestimonial;
+
+function initDonutScene() {
+  const container = document.getElementById("donutCanvas");
+  if (!container) return;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xfee9d6);
+
+  const camera = new THREE.PerspectiveCamera(
+    38,
+    container.clientWidth / container.clientHeight,
+    0.1,
+    100
+  );
+  camera.position.set(0, 1.3, 3.0);
+
+  const canvas = document.createElement("canvas");
+  canvas.style.display = "block";
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  canvas.style.touchAction = "none";
+  container.appendChild(canvas);
+
+  let renderer;
+  try {
+    const context = canvas.getContext("webgl", {
+      alpha: true,
+      antialias: false,
+      depth: true,
+      stencil: false,
+      preserveDrawingBuffer: false,
+      powerPreference: "low-power",
+    }) || canvas.getContext("experimental-webgl");
+
+    if (!context) {
+      throw new Error("WebGL context not available");
+    }
+
+    renderer = new THREE.WebGLRenderer({ canvas, context, alpha: true, antialias: false });
+  } catch (error) {
+    console.warn("WebGL unavailable, skipping 3D scene.", error);
+    container.innerHTML = "<p style='color:#6a2d25; font-size:1.2rem; text-align:center; padding:2rem;'>3D view unavailable in this browser.</p>";
+    return;
+  }
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 0.65));
+  renderer.shadowMap.enabled = false;
+  renderer.setSize(container.clientWidth, container.clientHeight);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.08;
+  controls.enablePan = false;
+  controls.screenSpacePanning = false;
+  controls.minDistance = 1.8;
+  controls.maxDistance = 5;
+  controls.maxPolarAngle = Math.PI / 2.2;
+  controls.target.set(0, 0.1, 0);
+  controls.update();
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+  scene.add(ambientLight);
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+  directionalLight.position.set(2.5, 4, 2);
+  scene.add(directionalLight);
+
+  const fillLight = new THREE.HemisphereLight(0xffffff, 0x9a7d6d, 0.35);
+  scene.add(fillLight);
+
+  const donutModel = new THREE.Group();
+  donutModel.position.set(0, 0, 0);
+  scene.add(donutModel);
+
+  const particleGroups = [];
+  const circleColors = [0xffd8e5, 0xffffdf, 0xc4e0ff, 0xe7d8ff, 0xf7f2ff, 0xff9eda, 0xffde89];
+
+  const createParticle = (color, position, scale) => {
+    const geometry = new THREE.SphereGeometry(0.03, 6, 6);
+    const material = new THREE.MeshBasicMaterial({
+      color,
+      transparent: true,
+      opacity: 0.9,
+    });
+    const sphere = new THREE.Mesh(geometry, material);
+    sphere.position.copy(position);
+    sphere.scale.setScalar(scale);
+    return sphere;
+  };
+
+  const donutOffsets = [0.4, 0.05, -0.35];
+  donutOffsets.forEach((yOffset) => {
+    const group = new THREE.Group();
+    group.position.set(0, yOffset, -0.55);
+    scene.add(group);
+    particleGroups.push(group);
+
+    for (let i = 0; i < 8; i++) {
+      const x = (Math.random() - 0.5) * 2.0;
+      const y = (Math.random() - 0.5) * 0.8;
+      const z = -(Math.random() * 0.6 + 0.4);
+      const color = circleColors[Math.floor(Math.random() * circleColors.length)];
+      const scale = Math.random() * 0.1 + 0.1;
+      group.add(createParticle(color, new THREE.Vector3(x, y, z), scale));
+    }
+  });
+
+  const loader = new GLTFLoader();
+  loader.load(
+    "./Assets/Meshy_AI_Sprinkle_Stack_Donuts_0619195539_texture.glb",
+    (gltf) => {
+      const model = gltf.scene;
+      model.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = false;
+          child.receiveShadow = false;
+          if (child.material) {
+            child.material.needsUpdate = true;
+          }
+        }
+      });
+      model.scale.setScalar(0.7);
+      model.position.set(0, -0.15, 0);
+      model.rotation.y = 0.8;
+      donutModel.add(model);
+    },
+    undefined,
+    (error) => {
+      console.error("Failed to load donut model:", error);
+    }
+  );
+
+  const resize = () => {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  };
+
+  window.addEventListener("resize", resize);
+  resize();
+  setTimeout(resize, 100);
+
+  const clock = new THREE.Clock();
+
+  const animate = () => {
+    requestAnimationFrame(animate);
+    const elapsed = clock.getElapsedTime();
+    donutModel.rotation.y = elapsed * 0.16;
+    controls.update();
+    renderer.render(scene, camera);
+  };
+
+  animate();
+}
+
+document.addEventListener("DOMContentLoaded", initDonutScene);
 
 gsap.from(".testi1", {
   opacity: 0,

@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
+  cursor: url("./Assets/Custom Cursor Small.png") 8 8, auto;
 }
 
 html {
@@ -72,7 +73,7 @@ nav img {
 
 .socials {
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .dropdown-content {
@@ -109,7 +110,7 @@ nav img {
   flex-direction: column;
   gap: 3px;
   align-items: flex-end;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .upperBar {
@@ -127,7 +128,6 @@ nav img {
 }
 
 .fullscreen-menu {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -135,6 +135,19 @@ nav img {
   height: 100%;
   background-color: #6a2d25;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-15%);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fullscreen-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .fullscreen-menu ul {
@@ -239,7 +252,7 @@ button {
   color: #fee9d6;
   border-radius: 50px;
   font-size: 16px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 button span {
@@ -277,7 +290,7 @@ button:hover span i {
   color: #6a2d25;
   font-weight: 500;
   transition: all linear 0.3s;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .tag:hover {
@@ -289,7 +302,7 @@ button:hover span i {
   color: #ec7033;
   text-decoration: underline;
   margin-top: 15px;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: block;
 }
 
@@ -303,26 +316,30 @@ button:hover span i {
   width: 50%;
   overflow: hidden;
   animation: upDown 4s linear infinite;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .model-flex1 {
   display: none;
 }
 .model-flex2 {
   display: block;
+  min-height: 80vh;
 }
-.model img {
-  height: 100%;
+#donutCanvas {
   width: 100%;
-  object-fit: contain;
+  height: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
 }
-
-@keyframes upDown {
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.model canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: inherit;
 }
 
 .scroller {
@@ -358,7 +375,7 @@ button:hover span i {
 
 .layer1 img,
 .layer2 img {
-  height: 8rem;
+  height: 10rem;
 }
 
 /* dfghjk */
@@ -366,6 +383,7 @@ button:hover span i {
 .content-donut {
   /* overflow: auto; */
   height: 100%;
+  margin-top: 30px;
 }
 
 .main-donut {
@@ -515,7 +533,8 @@ button:hover span i {
 
 .section {
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
+  /* cursor: pointer; */
 }
 
 .section-1 {
@@ -559,12 +578,31 @@ button:hover span i {
   color: #6a2d25;
 }
 
+.section-1 .image-1,
+.section-2 .image-2,
+.section-3 .image-3,
+.section-4 .image-4 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
 .section-1 img,
 .section-2 img,
 .section-3 img,
 .section-4 img {
-  padding: 5px 0;
-  width: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+  transition: none;
+  will-change: transform;
+  pointer-events: none;
 }
 
 .section-1:hover,
@@ -617,7 +655,7 @@ button:hover span i {
   color: #fd681c;
   font-weight: 600;
   margin: 30px 0;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .details p {
@@ -655,7 +693,7 @@ button:hover span i {
 }
 
 .slider-text span {
-  cursor: pointer;
+  /* cursor: pointer; */
   padding: 0 15px;
   position: relative;
 }
@@ -676,8 +714,8 @@ button:hover span i {
 }
 .dup-image-container {
   position: absolute;
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 12rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -762,6 +800,7 @@ button:hover span i {
   align-items: center;
   gap: 60px;
   margin: 0 4rem;
+  margin-top: 30px;
 }
 
 .video-ctn-Text {
@@ -807,13 +846,13 @@ button:hover span i {
   position: absolute;
   bottom: 0;
   left: 2%;
-  cursor: pointer;
+  /* cursor: pointer; */
   background: none;
   border: none;
   border: 4px solid #6a2d25;
-  width: 11rem;
+  width: 14rem;
   height: 11rem;
-  border-radius: 50%;
+  border-radius: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -831,7 +870,7 @@ button:hover span i {
 .reviews {
   height: 100vh;
   width: 100vw;
-  margin: 30px 0 80px 0;
+  margin: 70px 0 80px 0;
 }
 
 .reviewTitle {
@@ -841,11 +880,12 @@ button:hover span i {
   align-items: center;
   color: #6a2d25;
   margin-top: -30px;
+  margin-bottom: 150px;
 }
 
 .review img {
   width: 20rem;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .review {
@@ -943,12 +983,23 @@ button:hover span i {
 }
 
 .testimonial {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-40%) scale(0.98);
+  transition: opacity 0.1s ease, transform 0.1s ease, visibility 0.1s ease;
+  pointer-events: none;
 }
 
-.testi1 {
-  display: block;
+.testimonial.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+  pointer-events: auto;
 }
+
+/* kept for legacy positioning if needed */
+/* .testi1 {
+} */
 /* .testi2 {
   display: none;
 }
@@ -994,7 +1045,7 @@ button:hover span i {
 .first-1 img {
   width: 120px;
   margin-bottom: 30px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .first-1 img:hover {
@@ -1012,7 +1063,7 @@ button:hover span i {
 
 .Second-2 p {
   margin-bottom: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .Second-2 p:hover {
@@ -1029,7 +1080,7 @@ button:hover span i {
 
 .Third-3 img {
   width: 30px;
-  cursor: pointer;
+  /* cursor: pointer; */
   margin-right: 5px;
 }
 
@@ -1171,11 +1222,15 @@ button:hover span i {
     width: 100%;
   }
   .model-flex1 {
+    display: none;
+  }
+  .model-flex2 {
     display: block;
     margin: auto;
   }
-  .model-flex2 {
-    display: none;
+
+  #donutCanvas {
+    min-height: 100%;
   }
 
   .details p {
